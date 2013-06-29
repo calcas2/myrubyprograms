@@ -3,7 +3,7 @@ file_in_string = File.read(file)
 r_in_array = file_in_string.scan(/^\d+\. [^\b#]*/)
 File.open(new_file, "w") do |file|
 r_in_array.each do |result|
-file.puts result if result.include?(word)
+file.puts result if result.include?(word.dup.gsub!("_", " "))
 end
 end
 end
