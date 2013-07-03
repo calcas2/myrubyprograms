@@ -4,8 +4,9 @@ class Conversion
 
     def from_celsius_to_fahrenheit(value)
      value_to_convert = value.to_f
-     value_converted = "%.2f" % ((9/5 * value_to_convert) + 32)
-     "value to convert: #{value_to_convert}, value converted in fahrenheit: #{value_converted}"
+     v = value_to_convert - 32.0
+     value_converted = "%.2f" % (v / 1.8)
+"value to convert: #{value_to_convert}, value converted in fahrenheit: #{value_converted}"
     end
     
     def from_fahrenheit_to_celsius(value)
